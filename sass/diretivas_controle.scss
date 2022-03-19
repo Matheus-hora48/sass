@@ -1,0 +1,14 @@
+$corr: green;
+@if($cor== green){
+    p{
+        color: $cor;
+    }
+}@else if ($cor== red){
+    p{
+        color: $cor;
+    }
+}else{
+    p{
+        color: $cor;
+    }
+}
