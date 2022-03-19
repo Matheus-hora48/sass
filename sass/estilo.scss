@@ -1,0 +1,9 @@
+//oara fazer a importação de outros arquivos
+@import '_variaveis.scss';
+
+@for $i from 1 through 3 {
+  .item-#{$i} {
+    background: green;
+    margin-bottom: 2px;
+  }
+}
