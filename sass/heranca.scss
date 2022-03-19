@@ -1,0 +1,30 @@
+//herança com multiplas diretivas (serve para herdar parametros de outros)
+.classe1{
+  color: white;
+}
+
+.classe2{
+  background: blue;
+}
+
+.vermelho{
+  @extend .classe1;
+  @extend .classe2;
+}
+
+//encadeamento de diretivas e placeholders(%)
+
+%classe1{
+  color: red;
+}
+
+%classe2{
+  @extend %classe1;
+  background: black;
+}
+
+.erro{
+  @extend %classe2
+  padding: 10px;
+  border: 1px solid red;
+}

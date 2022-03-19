@@ -1,0 +1,29 @@
+//mixin
+//serve para fazer uma classe para agrupar coisas parecidas
+@mixin titulo{
+  background: black;
+  padding: 10px 15px;
+}
+h1{
+  color: white;
+  @include titulo;
+}
+
+h2{
+  color: yellow;
+  @include titulo;
+}
+
+//Pode colocar propriedade como 
+@mixin titulo ($cor ,  $corbg:black){
+  color: $cor;
+  background: $corbg;
+  padding: 10px 15px;
+}
+h1{
+  @include titulo(white);
+}
+
+h2{
+  @include titulo(blue);
+}
