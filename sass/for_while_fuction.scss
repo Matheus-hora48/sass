@@ -1,17 +1,17 @@
-//for from = inicio / through = final 
+//for from = inicio / through = final
 @for $i from 1 through 3 {
-  #item-#{$i}{
-      background: green;
-      margin-bottom: 2px;
+  #item-#{$i} {
+    background: green;
+    margin-bottom: 2px;
   }
 }
 
 //while precisa de um condição
 $contador: 1;
 @while $contador < 5 {
-  #item-#{$contador}{
-      background: yellow;
-      margin-bottom: 2px;
+  #item-#{$contador} {
+    background: yellow;
+    margin-bottom: 2px;
   }
   $contador: $contador + 1;
 }
@@ -19,26 +19,30 @@ $contador: 1;
 //each serve para percorrer uma lista
 $lista: green, yellow, red;
 $contador: 1;
-@each $cor in $lista{
-  #item-#{$contador}{
-      background: $cor;
-      margin-bottom: 2px;
-      
+@each $cor in $lista {
+  #item-#{$contador} {
+    background: $cor;
+    margin-bottom: 2px;
   }
   $contador: $contador + 1;
-
 }
 
-//funções 
+//funções
 $total: 12;
-@function largura-coluna($coluna: 2){
-  
-  @return percentage ($coluna/$total);
+@function largura-coluna($coluna: 2) {
+  @return percentage($coluna/$total);
 }
-
 
 $resultado: largura-coluna(12);
 /*
 
 #{$resultado}
+
 */
+
+@for $i from 1 through $total {
+  .col-#{$i} {
+    width: largura-coluna($i);
+    background: red;
+  }
+}
