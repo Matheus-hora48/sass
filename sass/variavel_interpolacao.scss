@@ -1,0 +1,26 @@
+/* Alinhamento */
+#conteudo{
+  background: green;
+  padding: 15px;
+  h1, h2{
+      color: black;
+  }
+  a{
+      color: red;
+      //como referenciar ao seletor pai
+      &:hover{
+          color: yellow;
+      }
+  }
+}
+
+h2{
+  color: $tamanho-titulo;
+}
+
+//Criando variavel
+//como colocar um varialvel global = !global
+$vermelho: red;
+$tamanho-titulo: red;
+
+//Interpolação uso do #{} posso passar strings para eles
