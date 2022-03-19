@@ -1,0 +1,44 @@
+//for from = inicio / through = final 
+@for $i from 1 through 3 {
+  #item-#{$i}{
+      background: green;
+      margin-bottom: 2px;
+  }
+}
+
+//while precisa de um condição
+$contador: 1;
+@while $contador < 5 {
+  #item-#{$contador}{
+      background: yellow;
+      margin-bottom: 2px;
+  }
+  $contador: $contador + 1;
+}
+
+//each serve para percorrer uma lista
+$lista: green, yellow, red;
+$contador: 1;
+@each $cor in $lista{
+  #item-#{$contador}{
+      background: $cor;
+      margin-bottom: 2px;
+      
+  }
+  $contador: $contador + 1;
+
+}
+
+//funções 
+$total: 12;
+@function largura-coluna($coluna: 2){
+  
+  @return percentage ($coluna/$total);
+}
+
+
+$resultado: largura-coluna(12);
+/*
+
+#{$resultado}
+*/
